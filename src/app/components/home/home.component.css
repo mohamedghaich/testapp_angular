@@ -1,14 +1,18 @@
+section{
+  padding: 3%;
+}
 form{
   width: 100%;
   display: flex;
   justify-content: space-around;
   padding: 1% 0;
-  border: black solid 1px;
+
   border-radius:10px ;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 300;
   font-size: 18px;
+  box-shadow: 0 26px 58px 0 rgba(0, 0, 0, .22), 0 5px 14px 0 rgba(0, 0, 0, .18);
 }
 form>div{
   display: flex;
@@ -34,18 +38,20 @@ color: white;
   border: black 1px solid;
 }
 .content{
+  box-shadow: 0 26px 58px 0 rgba(0, 0, 0, .22), 0 5px 14px 0 rgba(0, 0, 0, .18);
   margin-top: 30px;
   width:100%;
   display: flex;
   gap: 20px;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2%;
+  padding: 2%;
+  border-radius: 10px;
 }
 .content>div{
   height: 100%;
   border-radius: 10px;
-  border: black 1px solid;
+  box-shadow: inset 0 0 35px 5px rgba(0,0,0,0.25), inset 0 2px 1px 1px rgba(255,255,255,0.9), inset 0 -2px 1px rgba(0,0,0,0.25);
   height: 60vh;
 
 
@@ -68,11 +74,46 @@ table tr:first-child{
   background-color: rgb(83, 139, 165);
 }
 table th,td{
-
   padding: 5px;
   text-align: center;
   border: rgb(192, 192, 192) 0.5px solid;
 }
+.norm{
+  cursor: pointer;
+}
+.norm:hover{
+  background-color: rgba(167, 167, 167, 0.493);
+}
 .content .details{
   width: 30%;
 }
+.noclick{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.buttoncon td{
+  padding: 1%;
+  border: none;
+
+}
+.buttoncon td button{
+  width: 7vw;
+  height: 4vh;
+  border-radius: 10px;
+  background-color: transparent;
+  border: black 1px solid;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.buttoncon td button:hover{
+  color: white;
+    background-color: rgb(54, 54, 54);
+    border: rgb(53, 53, 53) 1px solid;
+  }
