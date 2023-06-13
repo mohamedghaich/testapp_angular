@@ -33,87 +33,14 @@
           <th>Nom Per</th>
           <th>Data de Nascimento</th>
         </tr>
-        <tr class="norm">
-          <td>Cliente</td>
-          <td>Número de Membro</td>
-          <td>Número de Família</td>
-          <td>Plano de Descrição</td>
-          <td>Prénom Per</td>
-          <td>Nom Per</td>
-          <td>Data de Nascimento</td>
-        </tr> <tr class="norm">
-          <td>Cliente</td>
-          <td>Número de Membro</td>
-          <td>Número de Família</td>
-          <td>Plano de Descrição</td>
-          <td>Prénom Per</td>
-          <td>Nom Per</td>
-          <td>Data de Nascimento</td>
-        </tr> <tr class="norm">
-          <td>Cliente</td>
-          <td>Número de Membro</td>
-          <td>Número de Família</td>
-          <td>Plano de Descrição</td>
-          <td>Prénom Per</td>
-          <td>Nom Per</td>
-          <td>Data de Nascimento</td>
-        </tr> <tr class="norm">
-          <td>Cliente</td>
-          <td>Número de Membro</td>
-          <td>Número de Família</td>
-          <td>Plano de Descrição</td>
-          <td>Prénom Per</td>
-          <td>Nom Per</td>
-          <td>Data de Nascimento</td>
-        </tr> <tr class="norm">
-          <td>Cliente</td>
-          <td>Número de Membro</td>
-          <td>Número de Família</td>
-          <td>Plano de Descrição</td>
-          <td>Prénom Per</td>
-          <td>Nom Per</td>
-          <td>Data de Nascimento</td>
-        </tr> <tr class="norm">
-          <td>Cliente</td>
-          <td>Número de Membro</td>
-          <td>Número de Família</td>
-          <td>Plano de Descrição</td>
-          <td>Prénom Per</td>
-          <td>Nom Per</td>
-          <td>Data de Nascimento</td>
-        </tr> <tr class="norm">
-          <td>Cliente</td>
-          <td>Número de Membro</td>
-          <td>Número de Família</td>
-          <td>Plano de Descrição</td>
-          <td>Prénom Per</td>
-          <td>Nom Per</td>
-          <td>Data de Nascimento</td>
-        </tr> <tr class="norm">
-          <td>Cliente</td>
-          <td>Número de Membro</td>
-          <td>Número de Família</td>
-          <td>Plano de Descrição</td>
-          <td>Prénom Per</td>
-          <td>Nom Per</td>
-          <td>Data de Nascimento</td>
-        </tr> <tr class="norm">
-          <td>Cliente</td>
-          <td>Número de Membro</td>
-          <td>Número de Família</td>
-          <td>Plano de Descrição</td>
-          <td>Prénom Per</td>
-          <td>Nom Per</td>
-          <td>Data de Nascimento</td>
-        </tr>
-        <tr class="norm">
-          <td>Cliente</td>
-          <td>Número de Membro</td>
-          <td>Número de Família</td>
-          <td>Plano de Descrição</td>
-          <td>Prénom Per</td>
-          <td>Nom Per</td>
-          <td>Data de Nascimento</td>
+        <tr class="norm" *ngFor="let item of tab">
+          <td>{{item.cliente}}</td>
+          <td>{{item.NumeroDeMembro}}</td>
+          <td>{{item.NumeroDeFamilia}}</td>
+          <td>{{item.PlanoDeDescricao}}</td>
+          <td>{{item.PrenomPer}}</td>
+          <td>{{item.NomPer}}</td>
+          <td>{{item.DataDeNascimento}}</td>
         </tr>
         <tr class="buttoncon">
           <td><button> &LeftArrow; previous </button></td>
