@@ -49,7 +49,6 @@ color: white;
   border-radius: 10px;
 }
 .content>div{
-  height: 100%;
   border-radius: 10px;
   box-shadow: inset 0 0 35px 5px rgba(0,0,0,0.25), inset 0 2px 1px 1px rgba(255,255,255,0.9), inset 0 -2px 1px rgba(0,0,0,0.25);
   height: 60vh;
@@ -58,7 +57,6 @@ color: white;
 }
 .content .tablec{
   width: 70%;
-  height: 100%;
   height: 60vh;
 
 
@@ -68,17 +66,42 @@ color: white;
   border-radius: 10px;
 
 }*/
-
-table tr:first-child{
+.tablec{
+  border-radius: 10px;
+}
+.tablec div:first-child{
   color: white;
   background-color: rgb(83, 139, 165);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+
 }
-table th,td{
+.tablec>div{
+  display: flex;
+  width: 100%;
+  height: 15%;
+
+}
+.tablec h3{
+  font-size: 18px;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: rgb(116, 116, 116) 0.5px solid;
+}
+.tablec span{
+  width: 100%;
   padding: 5px;
   text-align: center;
-  border: rgb(192, 192, 192) 0.5px solid;
+  border-bottom: rgb(71, 71, 71) 0.5px solid;
 }
 .norm{
+  height: 15%;
   cursor: pointer;
 }
 .norm:hover{
@@ -95,12 +118,14 @@ table th,td{
   height: 100%;
 }
 
-.buttoncon td{
+.buttoncon {
+  width: 100%;
+  display: flex;
   padding: 1%;
-  border: none;
+  justify-content: space-between;
 
 }
-.buttoncon td button{
+.buttoncon button{
   width: 7vw;
   height: 4vh;
   border-radius: 10px;
@@ -112,7 +137,7 @@ table th,td{
   align-items: center;
   transition: 0.3s;
 }
-.buttoncon td button:hover{
+.buttoncon button:hover{
   color: white;
     background-color: rgb(54, 54, 54);
     border: rgb(53, 53, 53) 1px solid;
@@ -128,7 +153,8 @@ table th,td{
 
 
 .details {
-  margin-top: 20px;
+  height: 62vh;
+  margin-top: -10px;
   padding: 20px;
   border: 1px solid #ccc;
   background-color: #f7f7f7;
@@ -139,12 +165,24 @@ table th,td{
   font-size: 20px;
   margin-bottom: 10px;
   color: #333;
+  display: inline;
+}
+.details h6 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #646464;
+  display: inline;
 }
 
 .details-content {
   width: 100%;
   display: grid;
   gap: 10px;
+
+}
+.detai{
+  height: 100%;
+  width: 100%;
 }
 
 .details-row {

@@ -2,28 +2,52 @@
   <form action="">
     <div>
       <label for="cilent">Client :</label>
-    <input type="search" name="client" [(ngModel)]="client" id="client">
+    <input type="search" (input)="search()" name="client" [(ngModel)]="client" id="client">
     </div>
     <div>
       <label for="nm">Número de membro :</label>
-    <input type="search" name="numM" [(ngModel)]="numM" id="nm">
+    <input type="search" (input)="search()" name="numM" [(ngModel)]="numM" id="nm">
     </div>
     <div>
       <label for="nf">Número de família :</label>
-    <input type="search" name="numF" [(ngModel)]="numf" id="nf">
+    <input type="search" (input)="search()" name="numF" [(ngModel)]="numf" id="nf">
     </div>
     <div>
       <label for="prenom">Prenom Per :</label>
-    <input type="search" name="Prenom" [(ngModel)]="prenom" id="prenom">
+    <input type="search" (input)="search()" name="Prenom" [(ngModel)]="prenom" id="prenom">
     </div>
     <div>
       <label for="nom">Nom Per :</label>
-    <input type="search" name="nom" [(ngModel)]="nom"  id="nom">
+    <input type="search" (input)="search()" name="nom" [(ngModel)]="nom"  id="nom">
     </div>
     <input type="submit" (click)="search()" value="search">
   </form>
   <div class="content">
-       <table *ngIf="tab!=null" class="tablec table table-hover">
+    <div *ngIf="tab!=null" class="tablec table table-hover">
+      <div>
+        <h3>Cliente</h3>
+        <h3>Número de Membro</h3>
+        <h3>Número de Família</h3>
+        <h3>Plano de Descrição</h3>
+        <h3>Prénom Per</h3>
+        <h3>Nom Per</h3>
+        <h3>Data de Nascimento</h3>
+      </div>
+      <div class="norm" *ngFor="let item of tab"  [class.selected]="item === selectedRow" (click)="selectRow(item)">
+        <span>{{item.cliente}}</span>
+        <span>{{item.numeroDeMembro}}</span>
+        <span>{{item.numeroDeFamilia}}</span>
+        <span>{{item.planoDeDescricao}}</span>
+        <span>{{item.prenomPer}}</span>
+        <span>{{item.nomPer}}</span>
+        <span>{{item.dataDeNascimento}}</span>
+      </div>
+      <div class="buttoncon">
+        <button (click)="previousPage()"> &LeftArrow; previous </button>
+        <button (click)="nextPage()"> next &rightarrow; </button>
+      </div>
+    </div>
+       <!-- <table *ngIf="tab!=null" class="tablec table table-hover">
         <tr>
           <th>Cliente</th>
           <th>Número de Membro</th>
@@ -51,7 +75,7 @@
           <td></td>
           <td> <button (click)="nextPage()"> next &rightarrow; </button></td>
         </tr>
-       </table>
+       </table> -->
        <div class="datanot" *ngIf="tab==null">
          <h1>data not found</h1>
        </div>
@@ -61,12 +85,12 @@
           <h1>No details yet</h1>
         </div>
         <div class="details-content" *ngIf="selectedRow">
-          <h1>Details:</h1>
-          <div class="details-row">
+          <h1>Details: <h6>({{ selectedRow.prenomPer }} {{ selectedRow.nomPer }})</h6></h1>
+          <!-- <div class="details-row">
             <span class="details-label">Cliente:</span>
             <span class="details-value">{{ selectedRow.cliente }}</span>
           </div>
-          <div class="details-row">
+           <div class="details-row">
             <span class="details-label">Número de Membro:</span>
             <span class="details-value">{{ selectedRow.numeroDeMembro }}</span>
           </div>
@@ -86,7 +110,7 @@
             <span class="details-label">Nom Per:</span>
             <span class="details-value">{{ selectedRow.nomPer }}</span>
           </div>
-          <div class="details-row">
+           <div class="details-row">
             <span class="details-label">Data de Nascimento:</span>
             <span class="details-value">{{ selectedRow.dataDeNascimento }}</span>
           </div>
@@ -97,59 +121,67 @@
           <div class="details-row">
             <span class="details-label">Data de Início da Cobertura:</span>
             <span class="details-value">{{ selectedRow.dataDeInicioDaCobertura }}</span>
+          </div> -->
+          <div class="detai">
+          <div class="collum">
+            <div class="details-row">
+              <span class="details-label">Hospitalisation:</span>
+              <span class="details-value" [ngClass]="{ 'green-check': selectedRow.hospitalisation, 'red-x': !selectedRow.hospitalisation }"></span>
+            </div>
+            <div class="details-row">
+              <span class="details-label">Ambulatoire:</span>
+              <span class="details-value" [ngClass]="{ 'green-check': selectedRow.ambulatoire, 'red-x': !selectedRow.ambulatoire }"></span>
+            </div>
+            <div class="details-row">
+              <span class="details-label">Maternite:</span>
+              <span class="details-value" [ngClass]="{ 'green-check': selectedRow.maternite, 'red-x': !selectedRow.maternite }"></span>
+            </div>
+            <div class="details-row">
+              <span class="details-label">Traitement Hormonal:</span>
+              <span class="details-value" [ngClass]="{ 'green-check': selectedRow.traitementHormonal, 'red-x': !selectedRow.traitementHormonal }"></span>
+            </div>
+            <div class="details-row">
+              <span class="details-label">Supplements:</span>
+              <span class="details-value" [ngClass]="{ 'green-check': selectedRow.supplements, 'red-x': !selectedRow.supplements }"></span>
+            </div>
+            <div class="details-row">
+              <span class="details-label">Vitamines:</span>
+              <span class="details-value" [ngClass]="{ 'green-check': selectedRow.vitamines, 'red-x': !selectedRow.vitamines }"></span>
+            </div>
+            <div class="details-row">
+              <span class="details-label">Check Up:</span>
+              <span class="details-value" [ngClass]="{ 'green-check': selectedRow.checkUp, 'red-x': !selectedRow.checkUp }"></span>
+            </div>
           </div>
-          <div class="details-row">
-            <span class="details-label">Hospitalisation:</span>
-            <span class="details-value" [ngClass]="{ 'green-check': selectedRow.hospitalisation, 'red-x': !selectedRow.hospitalisation }"></span>
+
+          <!---->
+          <div class="collum">
+            <div class="details-row">
+              <span class="details-label">Traitement Psychiatrique:</span>
+              <span class="details-value" [ngClass]="{ 'green-check': selectedRow.traitementPsychiatrique, 'red-x': !selectedRow.traitementPsychiatrique }"></span>
+            </div>
+            <div class="details-row">
+              <span class="details-label">Traitement Psychologique:</span>
+              <span class="details-value" [ngClass]="{ 'green-check': selectedRow.traitementPsychologique, 'red-x': !selectedRow.traitementPsychologique }"></span>
+            </div>
+            <div class="details-row">
+              <span class="details-label">Maladies Chroniques:</span>
+              <span class="details-value" [ngClass]="{ 'green-check': selectedRow.maladiesChroniques, 'red-x': !selectedRow.maladiesChroniques }"></span>
+            </div>
+            <div class="details-row">
+              <span class="details-label">Maladies Congenitales:</span>
+              <span class="details-value" [ngClass]="{ 'green-check': selectedRow.maladiesCongenitales, 'red-x': !selectedRow.maladiesCongenitales }"></span>
+            </div>
+            <div class="details-row">
+              <span class="details-label">Maladies Preexistantes:</span>
+              <span class="details-value" [ngClass]="{ 'green-check': selectedRow.maladiesPreexistantes, 'red-x': !selectedRow.maladiesPreexistantes }"></span>
+            </div>
+            <div class="details-row">
+              <span class="details-label">Test COVID:</span>
+              <span class="details-value" [ngClass]="{ 'green-check': selectedRow.testCOVID, 'red-x': !selectedRow.testCOVID }"></span>
+            </div>
           </div>
-          <div class="details-row">
-            <span class="details-label">Ambulatoire:</span>
-            <span class="details-value" [ngClass]="{ 'green-check': selectedRow.ambulatoire, 'red-x': !selectedRow.ambulatoire }"></span>
-          </div>
-          <div class="details-row">
-            <span class="details-label">Maternite:</span>
-            <span class="details-value" [ngClass]="{ 'green-check': selectedRow.maternite, 'red-x': !selectedRow.maternite }"></span>
-          </div>
-          <div class="details-row">
-            <span class="details-label">Traitement Hormonal:</span>
-            <span class="details-value" [ngClass]="{ 'green-check': selectedRow.traitementHormonal, 'red-x': !selectedRow.traitementHormonal }"></span>
-          </div>
-          <div class="details-row">
-            <span class="details-label">Supplements:</span>
-            <span class="details-value" [ngClass]="{ 'green-check': selectedRow.supplements, 'red-x': !selectedRow.supplements }"></span>
-          </div>
-          <div class="details-row">
-            <span class="details-label">Vitamines:</span>
-            <span class="details-value" [ngClass]="{ 'green-check': selectedRow.vitamines, 'red-x': !selectedRow.vitamines }"></span>
-          </div>
-          <div class="details-row">
-            <span class="details-label">Check Up:</span>
-            <span class="details-value" [ngClass]="{ 'green-check': selectedRow.checkUp, 'red-x': !selectedRow.checkUp }"></span>
-          </div>
-          <div class="details-row">
-            <span class="details-label">Traitement Psychiatrique:</span>
-            <span class="details-value" [ngClass]="{ 'green-check': selectedRow.traitementPsychiatrique, 'red-x': !selectedRow.traitementPsychiatrique }"></span>
-          </div>
-          <div class="details-row">
-            <span class="details-label">Traitement Psychologique:</span>
-            <span class="details-value" [ngClass]="{ 'green-check': selectedRow.traitementPsychologique, 'red-x': !selectedRow.traitementPsychologique }"></span>
-          </div>
-          <div class="details-row">
-            <span class="details-label">Maladies Chroniques:</span>
-            <span class="details-value" [ngClass]="{ 'green-check': selectedRow.maladiesChroniques, 'red-x': !selectedRow.maladiesChroniques }"></span>
-          </div>
-          <div class="details-row">
-            <span class="details-label">Maladies Congenitales:</span>
-            <span class="details-value" [ngClass]="{ 'green-check': selectedRow.maladiesCongenitales, 'red-x': !selectedRow.maladiesCongenitales }"></span>
-          </div>
-          <div class="details-row">
-            <span class="details-label">Maladies Preexistantes:</span>
-            <span class="details-value" [ngClass]="{ 'green-check': selectedRow.maladiesPreexistantes, 'red-x': !selectedRow.maladiesPreexistantes }"></span>
-          </div>
-          <div class="details-row">
-            <span class="details-label">Test COVID:</span>
-            <span class="details-value" [ngClass]="{ 'green-check': selectedRow.testCOVID, 'red-x': !selectedRow.testCOVID }"></span>
-          </div>
+        </div>
 
         </div>
       </div>
