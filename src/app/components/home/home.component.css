@@ -117,3 +117,66 @@ table th,td{
     background-color: rgb(54, 54, 54);
     border: rgb(53, 53, 53) 1px solid;
   }
+.datanot{
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: rgb(161, 47, 47);
+}
+
+
+.details {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+  overflow-y: scroll;
+}
+
+.details h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.details-content {
+  width: 100%;
+  display: grid;
+  gap: 10px;
+}
+
+.details-row {
+  display: flex;
+  width: 100%;
+  gap: 5px;
+  align-items: center;
+}
+
+.details-label {
+  font-weight: bold;
+}
+
+.details-value {
+  color: #3a3a3a;
+}
+.green-check::before {
+  content: '\2713';
+  color: green;
+}
+
+.red-x::before {
+  content: '\2717';
+  color: red;
+}
+
+.noclick {
+  text-align: center;
+}
+
+.noclick h1 {
+  font-size: 18px;
+  color: #999;
+}
+
