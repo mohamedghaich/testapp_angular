@@ -2,10 +2,10 @@
     <div class="login-container">
       <h2 class="login-title">Login</h2>
       <form class="login-form"  >
-        <input type="email" placeholder="Email" formControlName="email" required>
-        <input type="password" placeholder="Password" formControlName="password" required>
-        <span >Email or Password are  invalide!</span>
-        <button type="submit">Sign In</button>
+        <input type="email" placeholder="Email" name="email" [(ngModel)]="email" required>
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="password" required>
+        <span *ngIf="err==false" >Email or Password are  invalide!</span>
+        <button type="submit" (click)="login()">Sign In</button>
       </form>
     </div>
   </div>
