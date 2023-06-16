@@ -1,0 +1,82 @@
+<div class="container">
+<h1>Job mis a jour</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Image</th>
+      <th>Title</th>
+      <th>description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <tr *ngFor="let job of jobs">
+      <td>{{ job.id }}</td>
+      <td><img src="{{job.image }}" alt="{{ job.title }}"></td>
+      <td>{{ job.title }}</td>
+      <td>{{ job.description }}</td>
+      <td>
+        <button class="btn btn-danger" >supprimer</button>
+        <button class="btn btn-primary" >mis a jour</button>
+      </td>
+    </tr> -->
+  </tbody>
+</table>
+
+<!-- Delete Confirmation Dialog -->
+<!-- <div class="modal" [ngClass]="{'show': showDeleteDialog}" tabindex="-1" role="dialog"> -->
+  <div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmer suppression</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        vous voulez supprimer?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" >annuler</button>
+        <button type="button" class="btn btn-danger" >supprimer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Update Dialog -->
+<!-- <div class="modal" [ngClass]="{'show': showUpdateDialog}" tabindex="-1" role="dialog"> -->
+  <div class="modal"  tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">mis a jour Job</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form >
+          <div class="form-group">
+            <label>Title:</label>
+            <input type="text" class="form-control" formControlName="title">
+          </div>
+          <div class="form-group">
+            <label>Description:</label>
+            <input type="text" class="form-control" formControlName="description">
+          </div>
+          <div class="form-group">
+            <label>Image URL:</label>
+            <input type="text" class="form-control" formControlName="image">
+          </div>
+          <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

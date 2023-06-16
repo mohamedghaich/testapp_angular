@@ -1,45 +1,19 @@
-<!--
-<div class="user-list">
-  <h2>User List</h2>
-  <div class="table">
-    <div class="table-header">
-      <div class="cell">Username</div>
-      <div class="cell">Password</div>
-      <div class="cell">Role</div>
-      <div class="cell">Actions</div>
-    </div>
-    <div class="table-body">
-      <div class="row" >
-        <div class="cell">fgd</div>
-        <div class="cell">dfh</div>
-        <div class="cell">fhg</div>
-        <div class="cell">
-          <button >Edit</button>
-          <button >Delete</button>
-        </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/create">Create Job</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/update">Update Job</a>
+          </li>
+        </ul>
       </div>
+    </div>
+    <div class="col-md-9">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-
-<div class="user-form">
-  <h2></h2>
-  <form >
-    <div class="form-group">
-      <label>Name:</label>
-      <input type="text"  required>
-    </div>
-    <div class="form-group">
-      <label>Email:</label>
-      <input type="email"  required>
-    </div>
-    <div class="form-group">
-      <label>Phone:</label>
-      <input type="tel" required>
-    </div>
-    <div class="form-actions">
-      <button type="submit">enre</button>
-      <button type="button" >Cancel</button>
-    </div>
-  </form>
-</div> -->
