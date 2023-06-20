@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './components/admin/admin.component';
 import { AddComponent } from './components/admin/add/add.component';
 import { UpdateComponent } from './components/admin/update/update.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { UpdateComponent } from './components/admin/update/update.component';
     AdminComponent,
     AddComponent,
     UpdateComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,20 @@
+<div class="admin-container">
+  <div class="header">
+    <div class="logo">
+      <!-- Insert your logo here -->
+      <img src="path_to_your_logo.png" alt="Logo" />
+    </div>
+    <ul class="navigation">
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/admin/add" *ngIf="isAdmin">Add User</a></li>
+      <li><a routerLink="/admin/update" *ngIf="isAdmin">Update User</a></li>
+    </ul>
+    <div class="logout">
+      <!-- Insert your logout button or link here -->
+      <button (click)="logout()" >Logout</button>
+    </div>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

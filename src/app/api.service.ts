@@ -11,10 +11,10 @@ export class ApiService {
   constructor(private api:HttpClient, private router: Router) { }
 
   getpage(num:number):any{
-    return this.api.get("https://localhost:44304/api/clients?page="+num+"&pageSize=5");
+    return this.api.get("https://localhost:44304/api/clients?page="+num+"&pageSize=8");
   }
   getshearch(Cliente:string,numM:string,numf:string,prenom:string,nom:string,num:number):any{
-   return this.api.get("https://localhost:44304/api/clients/search?cliente="+Cliente+"&numeroDeMembro="+numM+"&numeroDeFamilia="+numf+"&prenomPer="+prenom+"&nomPer="+nom+"&page="+num+"&pageSize=5");
+   return this.api.get("https://localhost:44304/api/clients/search?cliente="+Cliente+"&numeroDeMembro="+numM+"&numeroDeFamilia="+numf+"&prenomPer="+prenom+"&nomPer="+nom+"&page="+num+"&pageSize=8");
   }
   login(u:any): any {
     const url = "https://localhost:44304/api/User/Login";
@@ -42,6 +42,9 @@ export class ApiService {
   }
   deleteuser(user:string){
     return this.api.delete("https://localhost:44304/api/User/"+user);
+  }
+  getoneuser(username:string){
+    return this.api.get("https://localhost:44304/api/User/"+username);
   }
 
 

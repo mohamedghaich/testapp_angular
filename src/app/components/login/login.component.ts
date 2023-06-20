@@ -28,10 +28,19 @@ export class LoginComponent {
     };
     this.api.login(login).subscribe(
       (response: { errorMessage: string; }) => {
+        this.api.getoneuser(this.email).subscribe(
+        (r:any) => {
+          sessionStorage.setItem('role', r.role);
+
+        },
+        (error: any) => {
+          this.err=false;
+          this.router.navigate(['/login']);
+        })
         sessionStorage.setItem('username', this.email);
         sessionStorage.setItem('token', response.errorMessage);
 
-        this.router.navigate(['/home']);
+          this.router.navigate(['/home']);
 
       },
       (error: any) => {
