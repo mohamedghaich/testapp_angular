@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './components/admin/admin.component';
+import { AddComponent } from './components/admin/add/add.component';
+import { UpdateComponent } from './components/admin/update/update.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,15 @@ import { AdminComponent } from './components/admin/admin.component';
     HomeComponent,
     LoginComponent,
     AdminComponent,
+    AddComponent,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

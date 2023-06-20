@@ -1,0 +1,77 @@
+<div class="update-user-container" [class.deactive]="usernameupdate !=='' || usernamedelete !== '' ">
+  <h2>Update User</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Role</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of users">
+        <td>{{item.username}}</td>
+        <td>********</td>
+        <td>{{item.role}}</td>
+        <td class="action-buttons">
+          <button class="update-btn" (click)="showUpdatePopup(item.username)">Update</button>
+          <button class="delete-btn" (click)="showDeleteConfirmation(item.username)">Delete</button>
+        </td>
+      </tr>
+      <!-- Additional rows for other users -->
+    </tbody>
+  </table>
+</div>
+
+<!-- Update User Popup -->
+<div class="popup update-popup" [class.active]="usernameupdate !==''" id="updatePopup">
+  <h3>Update User</h3>
+  <!-- <form>
+    <div class="form-group">
+      <label for="newUsername">Username:</label>
+      <input type="text" id="newUsername" name="newUsername" required>
+    </div>
+    <div class="form-group">
+      <label for="newPassword">Password:</label>
+      <input type="password" id="newPassword" name="newPassword" required>
+    </div>
+    <div class="form-group">
+      <label for="newRole">Role:</label>
+      <select id="newRole" name="newRole" required>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
+    </div>
+    <button type="submit">Update</button>
+    <button type="button" (click)="hideUpdatePopup()">Cancel</button>
+  </form> -->
+  <form [formGroup]="userForm">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" formControlName="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" required>
+    </div>
+    <div class="form-group">
+      <label for="role">Role:</label>
+      <select id="role" formControlName="role" required>
+        <option value="" disabled selected>Select role</option>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
+    </div>
+    <button type="submit">Update</button>
+    <button type="button" (click)="hideUpdatePopup()">Cancel</button>
+  </form>
+</div>
+
+<!-- Delete Confirmation Popup -->
+<div class="popup delete-confirmation-popup" [class.active]="usernamedelete !==''" id="deleteConfirmationPopup">
+  <h3>Delete User</h3>
+  <p>Are you sure you want to delete this user?</p>
+  <button class="confirm-btn" (click)="deleteUser()">Confirm</button>
+  <button class="cancel-btn" (click)="hideDeleteConfirmation()">Cancel</button>
+</div>
