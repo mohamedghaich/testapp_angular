@@ -7,7 +7,7 @@ import { Observable, catchError, map, of } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  urlg:string="http://apicms.somee.com/";
+  urlg:string="http://apicms.somee.com";
   constructor(private api:HttpClient, private router: Router) { }
 
   getpage(num:number):any{
